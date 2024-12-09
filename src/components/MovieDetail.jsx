@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import movieDetailData from "../movieDetailData.json";
 
+
 const MovieDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@ const MovieDetail = () => {
       <MovieInfo>
         <h1>{movie.title}</h1>
         
-        <p><strong>Rating:</strong> {movie.vote_average.toFixed(1)} ({movie.vote_count} votes)</p>
+        <p><strong>Rating:</strong> {movie.vote_average.toFixed(1)} </p>
         <p><strong>Overview:</strong> {movie.overview}</p>
       </MovieInfo>
 

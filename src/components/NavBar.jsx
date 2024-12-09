@@ -4,12 +4,18 @@ import styled from "styled-components";
 
 
 const NavBarContainer = styled.nav`
+  height: 30px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between; 
   align-items: center;
   background-color: #000000;
   color: white;
-  padding: 10px 20px;
+ 
 `;
 
 const LeftSection = styled.div`
@@ -36,29 +42,39 @@ const NavLink = styled(Link)`
 
 
 const LoginLink = styled(NavLink)`
-  background-color: #2b91ff; 
-  padding: 5px 15px;
+  background: linear-gradient(45deg, #7f0098, #d500f9);
+  width: 50px;
+  height: 20px;
   border-radius: 5px;
-  font-size: 0.8rem;
-
-
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
   
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+
+ 
 `;
 
-
 const RegisterLink = styled(NavLink)`
-  background-color: #0c902b; 
-  padding: 5px 15px;
+   background: linear-gradient(45deg, #7f0098, #d500f9);
+  width: 50px;
+  height: 20px;
   border-radius: 5px;
-  font-size: 0.8rem;
-  
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+ 
 
-  
-
+ 
 `;
 
 const SearchInput = styled.input`
-  width: 400px;
+  width: 200px;
+  height: 5px;
   padding: 5px;
   border: none;
   border-radius: 5px;

@@ -37,6 +37,7 @@ const Container = styled.div`
   flex-direction: row; 
   justify-content: center; 
   flex-wrap: wrap; 
+  margin-top: 30px;
   
 
 `
