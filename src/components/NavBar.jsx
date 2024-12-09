@@ -1,54 +1,83 @@
-// NavBar.js
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// 스타일드 컴포넌트
+
 const NavBarContainer = styled.nav`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between; 
   align-items: center;
   background-color: #000000;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
 `;
 
+const LeftSection = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const RightSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+// 기본 NavLink 스타일
 const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
   font-size: 0.8rem;
-  margin: 0 15px;
- 
-  
 
   &:hover {
     color: #00bcd4;
   }
 `;
 
+
+const LoginLink = styled(NavLink)`
+  background-color: #2b91ff; 
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+
+
+  
+`;
+
+
+const RegisterLink = styled(NavLink)`
+  background-color: #0c902b; 
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  
+
+  
+
+`;
+
 const SearchInput = styled.input`
-  width: 200px;
+  width: 400px;
   padding: 5px;
   border: none;
-  border-top: 0px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-left: 10px;
-`
-
+`;
 
 const NavBar = () => {
   return (
-   
     <NavBarContainer>
-      
-      <NavLink to="/">Home</NavLink>
-     <SearchInput type="text"  />
-      <NavLink to="/login">로그인</NavLink>
-      <NavLink to="/register">회원가입</NavLink>
-   
-     
+      <LeftSection>
+        <NavLink to="/">Logo</NavLink>
+        <SearchInput type="text"/>
+      </LeftSection>
 
-    
+      
+      <RightSection>
+        <LoginLink to="/login">로그인</LoginLink>
+        <RegisterLink to="/register">회원가입</RegisterLink>
+      </RightSection>
     </NavBarContainer>
   );
 };

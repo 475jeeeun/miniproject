@@ -4,7 +4,7 @@ import movieDetailData from "../movieDetailData.json";
 
 const MovieDetailContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding: 20px;
   max-width: 800px;
@@ -30,7 +30,7 @@ const MovieInfo = styled.div`
 
   p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -45,7 +45,7 @@ const GenreList = styled.div`
     background-color: #f0f0f0;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -55,7 +55,7 @@ const MovieDetail = () => {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    // Load dummy movie data
+    // API 요청
     setMovie(movieDetailData);
   }, []);
 
@@ -65,13 +65,13 @@ const MovieDetail = () => {
 
   return (
     <MovieDetailContainer>
-      {/* Poster */}
+   
       <MoviePoster
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={`${movie.title} poster`}
       />
 
-      {/* Title and Overview */}
+  
       <MovieInfo>
         <h1>{movie.title}</h1>
         
@@ -79,7 +79,7 @@ const MovieDetail = () => {
         <p><strong>Overview:</strong> {movie.overview}</p>
       </MovieInfo>
 
-      {/* Genres */}
+    
       <GenreList>
         {movie.genres.map((genre) => (
           <span key={genre.id}>{genre.name}</span>

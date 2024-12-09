@@ -9,6 +9,7 @@ const App = () => {
   const [movies] = useState(movieListData.results);
 
   return (
+    
     <div>
       <NavBar />
       {/* 라우트 설정 */}
@@ -18,7 +19,8 @@ const App = () => {
           path="/"
           element={
             
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+            <div style={{ display: "flex", justifyContent:"center",flexWrap: "wrap", gap: "20px" }}>
+              
               {movies.map((movie) => (
                 <MovieCard
                   key={movie.id}
