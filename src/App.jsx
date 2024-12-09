@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import MovieCard from "./components/MovieCard";
 import MovieDetail from "./components/MovieDetail";
 import movieListData from "./movieListData.json";
-import NavBar from "./components/NavBar";
+import Layout from "./components/layout";
 
 const App = () => {
   const [movies] = useState(movieListData.results);
@@ -11,7 +11,7 @@ const App = () => {
   return (
     
     <div>
-      <NavBar />
+      <Layout />
       {/* 라우트 설정 */}
       <Routes>
         {/* 메인 페이지: MovieCard 리스트 렌더링 */}

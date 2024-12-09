@@ -17,7 +17,7 @@ const MovieCard = ({ posterUrl, title, average }) => {
 
        
       <Title>{title}</Title>
-      <Rating>평점: {average}</Rating>
+      <Rating>평점: {average.toFixed(1)}</Rating>
      
      
     </Card>
