@@ -23,6 +23,7 @@ export default Layout;
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   min-height: 100vh;
 `;
 
@@ -30,4 +31,5 @@ const Main = styled.main`
   flex: 1; /* 콘텐츠 영역을 화면에 꽉 채우기 */
   padding: 20px;
   background-color: #f5f5f5;
+  padding-top: 30px;
 `;

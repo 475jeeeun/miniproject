@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
 
 
-const MovieCard = ({ posterUrl, title, average }) => {
+const MovieCard = ({id, posterUrl, title, average }) => {
   const navigate = useNavigate(); // 상세 페이지 이동을 위한 네비게이션 객체
-
-  return (
+  
+   return (
     <Container>
-    <Card onClick={() => navigate("/MovieDetail")}>
+    <Card onClick={() => navigate(`/movie/${id}`)}>
       <Poster
         src={`https://image.tmdb.org/t/p/w500${posterUrl}`}
         alt={`${title} poster`}
@@ -41,10 +41,6 @@ const Container = styled.div`
   
 
 `
-
-
-
-
 
 
 const Card = styled.div`

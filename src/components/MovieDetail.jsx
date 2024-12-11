@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import movieDetailData from "../movieDetailData.json";
+import axios from "axios";
+
+
 
 
 const MovieDetailContainer = styled.div`
@@ -53,12 +56,35 @@ const GenreList = styled.div`
 
 
 const MovieDetail = () => {
+  const { id } = useParams(); 
   const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // API 요청
-    setMovie(movieDetailData);
-  }, []);
+    const fetchMovieDetail = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/${id}?language=ko-KR`,
+          {
+            headers: {
+              accept: "application/json",
+              Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+            },
+          }
+        );
+        setMovie(response.data);
+      } catch (err) {
+        console.error("Error fetching movie details:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMovieDetail();
+  }, [id]);
+
 
   if (!movie) {
     return <p>Loading...</p>;
